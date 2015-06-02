@@ -21,7 +21,7 @@ public class FrontController extends HttpServlet implements IFrontController {
 
 	private static final long serialVersionUID = 1L;
 	
-	private static String URIroot = "/jwf/";
+	private static String URIroot = "/jwf";
 	
 	private IRewriter rewriter;
 	private IDispatcher dispatcher;
@@ -40,6 +40,8 @@ public class FrontController extends HttpServlet implements IFrontController {
 //		rewriter.addRule(new RewriteRule(URIroot + "upload", "org.esgi.web.framework.module.UploadAction"));
 		
 		rewriter.addRule(new UserRoute());
+		rewriter.addRule(new RewriteRule(URIroot, "org.esgi.web.framework.module.HomeAction"));
+		rewriter.addRule(new RewriteRule(URIroot + "/", "org.esgi.web.framework.module.HomeAction"));
 	}
 
 	@Override
