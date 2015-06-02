@@ -17,8 +17,8 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.esgi.web.framework.context.interfaces.IContext;
 import org.esgi.web.framework.context.interfaces.IHtmlContext;
+import org.esgi.web.framework.entity.User;
 import org.esgi.web.framework.error.JwfErrorHandler;
-import org.esgi.web.framework.module.user.User;
 
 public class Context implements IContext {
 

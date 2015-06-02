@@ -1,13 +1,14 @@
 package org.esgi.web.framework.module.user;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class User {
 
+	public int id;
+	public String firstName;
+	public String lastName;
 	public String login;
 	public String password;
-	public List<String> roles;
+	public String role;
 
 	public User() {
 		
@@ -16,15 +17,14 @@ public class User {
 	public User(String login, String password) {
 		this.login = login;
 		this.password = password;
-		this.roles = new ArrayList<String>();
-		this.roles.add("admin");
-		this.roles.add("user");
 	}
 
-	public User(String login, String password, List<String> roles) {
+	public User(String login, String password, String firstName, String lastName, String role) {
 		this.login = login;
 		this.password = password;
-		this.roles = roles;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.role = role;
 	}
 
 	public String getLogin() {
@@ -43,11 +43,4 @@ public class User {
 		this.password = password;
 	}
 
-	public List<String> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<String> roles) {
-		this.roles = roles;
-	}
 }

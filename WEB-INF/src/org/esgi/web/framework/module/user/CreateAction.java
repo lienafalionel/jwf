@@ -2,11 +2,9 @@ package org.esgi.web.framework.module.user;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-
 import org.esgi.web.framework.action.interfaces.IAction;
 import org.esgi.web.framework.context.interfaces.IContext;
+import org.esgi.web.framework.entity.User;
 
 public class CreateAction implements IAction {
 

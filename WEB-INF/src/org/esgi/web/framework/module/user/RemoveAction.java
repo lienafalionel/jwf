@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.esgi.web.framework.action.interfaces.IAction;
 import org.esgi.web.framework.context.Context;
 import org.esgi.web.framework.context.interfaces.IContext;
+import org.esgi.web.framework.entity.User;
 
 public class RemoveAction implements IAction {
 

@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.esgi.web.framework.action.interfaces.IAction;
 import org.esgi.web.framework.context.Context;
 import org.esgi.web.framework.context.interfaces.IContext;
+import org.esgi.web.framework.entity.User;
 
 public class SearchAction implements IAction {
 
@@ -63,7 +64,7 @@ public class SearchAction implements IAction {
 			String login = context._getRequest().getParameter("login");
 			try {				
 				for (User u : UserList.users) {
-					System.out.println("User boucle : " + u.login);
+					System.out.println("User boucle : " + u.getLogin());
 					if (u.getLogin().equals(login)) {
 						user = u;
 						break;

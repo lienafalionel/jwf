@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.esgi.web.framework.action.interfaces.IActionRenderable;
 import org.esgi.web.framework.context.interfaces.IContext;
+import org.esgi.web.framework.entity.User;
 import org.esgi.web.framework.renderer.JSONGenericRenderer;
 import org.esgi.web.framework.renderer.interfaces.IRenderer;
 
