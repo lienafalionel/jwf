@@ -15,6 +15,20 @@ public class Car {
 	public Car() {
 		
 	}
+	
+	public Car(String name, float price, String year, String type_fuel,
+			String gearbox_type, String description, String telephone_number,
+			String email) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.year = year;
+		this.type_fuel = type_fuel;
+		this.gearbox_type = gearbox_type;
+		this.description = description;
+		this.telephone_number = telephone_number;
+		this.email = email;
+	}
 
 	public int getId() {
 		return id;

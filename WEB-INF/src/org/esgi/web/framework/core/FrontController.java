@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.esgi.web.framework.context.Context;
 import org.esgi.web.framework.core.interfaces.IFrontController;
 import org.esgi.web.framework.module.user.UserList;
+import org.esgi.web.framework.router.CarRoute;
 import org.esgi.web.framework.router.Dispatcher;
 import org.esgi.web.framework.router.RewriteRule;
 import org.esgi.web.framework.router.Rewriter;
@@ -40,6 +41,7 @@ public class FrontController extends HttpServlet implements IFrontController {
 //		rewriter.addRule(new RewriteRule(URIroot + "upload", "org.esgi.web.framework.module.UploadAction"));
 		
 		rewriter.addRule(new UserRoute());
+		rewriter.addRule(new CarRoute());
 		rewriter.addRule(new RewriteRule(URIroot, "org.esgi.web.framework.module.HomeAction"));
 		rewriter.addRule(new RewriteRule(URIroot + "/", "org.esgi.web.framework.module.HomeAction"));
 	}

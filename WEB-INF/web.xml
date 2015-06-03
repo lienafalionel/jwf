@@ -15,4 +15,26 @@
 		<servlet-name>index</servlet-name>
 		<jsp-file>/work/index.jsp</jsp-file>
 	</servlet>	 
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<jsp-file>/work/home.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>createCar</servlet-name>
+		<jsp-file>/work/createCar.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createCar</servlet-name>
+		<url-pattern>/car/createCar</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -36,10 +36,12 @@ public class CarRoute implements IRewriteRule{
 		String method = (String) context.getParameter("method");
 
 		if (method == null) {
-			context.setActionClass("org.esgi.web.framework.module.user.MenuAction");
+			context.setActionClass("org.esgi.web.framework.module.car.MenuAction");
 		} else {
 			switch (method) {
-				
+			case "create":
+				context.setActionClass("org.esgi.web.framework.module.car.CreateAction");
+				break;
 			}
 		}
 	}

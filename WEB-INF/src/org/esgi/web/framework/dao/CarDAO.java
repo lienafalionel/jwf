@@ -24,7 +24,7 @@ public class CarDAO extends DAO<Car>{
                 	ResultSet.TYPE_SCROLL_INSENSITIVE, 
                 	ResultSet.CONCUR_UPDATABLE
                  ).executeUpdate("INSERT INTO car (name, price, year, type_fuel, gearbox_type, description, telephone_number, email)"+
-                                            			"VALUES('"+obj.getName()+"', '"+obj.getPrice()+"', '"+obj.getType_fuel()+"', '"+obj.getGearbox_type()+"', '"+obj.getDescription()+"', '"+obj.getTelephone_number()+"', '"+obj.getEmail()+"')"
+                                            			"VALUES('"+obj.getName()+"', '"+obj.getPrice()+"', '"+ obj.getYear()+"', '"+ obj.getType_fuel()+"', '"+obj.getGearbox_type()+"', '"+obj.getDescription()+"', '"+obj.getTelephone_number()+"', '"+obj.getEmail()+"')"
                  );
 
 	    } catch (SQLException e) {

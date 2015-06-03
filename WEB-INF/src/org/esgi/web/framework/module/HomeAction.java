@@ -47,23 +47,7 @@ public class HomeAction implements IAction {
 	public void proceed(IContext context) {
 		if (context._getRequest().getMethod().equals("GET")) {
 			try {
-				// context._getResponse().sendRedirect("index.jsp");
-				context._getResponse().setContentType("text/html");
-				context._getResponse().getWriter()
-						.println("<h1>Bienvenue sur jwf</h1>");
-				context._getResponse().getWriter()
-						.println("<form action=\"\" method=\"post\">");
-				context._getResponse()
-						.getWriter()
-						.println(
-								"<label for=\"login\">Login: </label> <input name=\"login\"> <br>");
-				context._getResponse()
-						.getWriter()
-						.println(
-								"<label for=\"password\">Password: </label> <input name=\"password\" type=\"password\"> <br>");
-				context._getResponse().getWriter()
-						.println("<input type=\"submit\" value=\"Connexion\">");
-				context._getResponse().getWriter().println("</form>");
+				 context._getResponse().sendRedirect("index");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -74,17 +58,8 @@ public class HomeAction implements IAction {
 				UserDAO userDao = new UserDAO();
 				String login = context._getRequest().getParameter("login");
 				String password = context._getRequest().getParameter("password");
-				/*Class.forName("com.mysql.jdbc.Driver");
-				Connection connection = DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/jwf", "root", "");
-				ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM user where login = '" + login + "' AND password = '" + password + "'");
-				*/
 				if (userDao.findByLoginAndPassword(login, password)){
-					//User u = new User(rs.getString("login"), rs.getString("password"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("role"));
-					context._getResponse().setContentType("text/html");
-					context._getResponse().getWriter()
-					.println("<h1>Bienvenue</h1>");
-					context._getResponse().getWriter().println("<br><a href=\"/jwf/user\">Menu</a>");
+					context._getResponse().sendRedirect("home");
 				} else {
 					context._getResponse().sendRedirect("index");
 					System.out.println("non connecté");
