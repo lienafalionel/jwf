@@ -55,8 +55,9 @@ public class UserDAO extends DAO<User>{
                 	ResultSet.TYPE_SCROLL_INSENSITIVE, 
                 	ResultSet.CONCUR_UPDATABLE
                  ).executeUpdate("INSERT INTO user (login, password, lastname, firstname, role)"+
-                                            			"VALUES("+obj.getLogin()+", "+obj.getPassword()+", "+obj.getLastName()+", "+obj.getFirstName()+","+obj.getRole()+")"
-                 );
+                                            			"VALUES('"+obj.getLogin()+"', '"+obj.getPassword()+"', '"+obj.getLastName()+"', '"+obj.getFirstName()+"', '"+obj.getRole()+"')"
+
+                		 );
 
 	    } catch (SQLException e) {
 	            e.printStackTrace();

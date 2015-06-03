@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.esgi.web.framework.action.interfaces.IAction;
 import org.esgi.web.framework.context.interfaces.IContext;
+import org.esgi.web.framework.dao.UserDAO;
 import org.esgi.web.framework.entity.User;
 
 public class CreateAction implements IAction {
@@ -59,7 +60,10 @@ public class CreateAction implements IAction {
 				context._getResponse().setContentType("text/html");
 				context._getResponse().getWriter().println("<form action=\"\" method=\"post\">");
 				context._getResponse().getWriter().println("<label for=\"login\">Login: </label> <input name=\"login\"> <br>");
-				context._getResponse().getWriter().println("<label for=\"password\">Password: </label> <input name=\"password\" type=\"password\"> <br>");
+				context._getResponse().getWriter().println("<label for=\"password\">Password: </label> <input name=\"password\"> <br>");
+				context._getResponse().getWriter().println("<label for=\"lastname\">Lastname: </label> <input name=\"lastname\"> <br>");
+				context._getResponse().getWriter().println("<label for=\"firstname\">Firstname: </label> <input name=\"firstname\"> <br>");
+				context._getResponse().getWriter().println("<label for=\"role\">Role: </label> <input name=\"role\"> <br>");
 				context._getResponse().getWriter().println("<input type=\"submit\" value=\"Créer\">");
 				context._getResponse().getWriter().println("</form>");
 				
@@ -69,10 +73,15 @@ public class CreateAction implements IAction {
 				e.printStackTrace();
 			}
 		} else if (context._getRequest().getMethod().equals("POST")) {
+			
+			UserDAO userDao = new UserDAO();
 			String login = context._getRequest().getParameter("login");
 			String password = context._getRequest().getParameter("password");
-			User u = new User(login, password);
-			UserList.users.add(u);
+			String lastname = context._getRequest().getParameter("lastname");
+			String firstname = context._getRequest().getParameter("firstname");
+			String role = context._getRequest().getParameter("role");
+			User u = new User(login, password,lastname,firstname,role);
+			userDao.create(u);
 			try {
 				context._getResponse().sendRedirect("");
 			} catch (IOException e) {
