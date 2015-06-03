@@ -1,7 +1,5 @@
 package org.esgi.web.framework.entity;
 
-import javax.persistence.Entity;
-
 public class Car {
 
 	private int id;

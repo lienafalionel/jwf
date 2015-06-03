@@ -55,7 +55,7 @@ public class FrontController extends HttpServlet implements IFrontController {
 			c = new Context(request, response);
 			// Do operations
 			rewriter.rewrite(c);
-			dispatcher.dispatch(c);			
+			dispatcher.dispatch(c);
 			c.removeUploadedFiles();
 		} catch (IOException e) {
 			e.printStackTrace();

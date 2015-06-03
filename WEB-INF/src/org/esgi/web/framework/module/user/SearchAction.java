@@ -74,7 +74,7 @@ public class SearchAction implements IAction {
 				context._getResponse().setContentType("text/html");
 				if (user != null) {
 					context._getResponse().getWriter()
-							.println(user);
+							.println(user.getLogin());
 				} else {
 					context._getResponse().getWriter().println("<h1>User not found! </h1>");
 				}

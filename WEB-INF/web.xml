@@ -10,4 +10,9 @@
 		<servlet-name>FrontController</servlet-name> 
 		<url-pattern>/*</url-pattern> 
 	</servlet-mapping> 
+	
+	<servlet>
+		<servlet-name>index</servlet-name>
+		<jsp-file>/work/index.jsp</jsp-file>
+	</servlet>	 
 </web-app>
